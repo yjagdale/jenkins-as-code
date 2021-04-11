@@ -9,10 +9,6 @@ RUN jenkins-plugin-cli --plugin-file /usr/share/jenkins/ref/plugins.txt
 
 COPY init_scripts/src/main/groovy/ /usr/share/jenkins/ref/init.groovy.d/
 
-# Directory for Pipeline Library development sample
-ENV LOCAL_PIPELINE_LIBRARY_PATH=${LOCAL_PIPELINE_LIBRARY_PATH}
-RUN mkdir -p ${LOCAL_PIPELINE_LIBRARY_PATH}
-
 VOLUME /var/jenkins_home/pipeline-library
 VOLUME /var/jenkins_home/pipeline-libs
 EXPOSE 5005
